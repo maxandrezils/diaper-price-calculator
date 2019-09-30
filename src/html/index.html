@@ -2,53 +2,91 @@
 <html lang="en">
   <head>
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../scss/styles.scss" media="screen,projection"/>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../scss/styles.scss"
+      media="screen,projection"
+    />
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col s9">
           <h1>Diaper Price Calculator</h1>
-          <h5>Please enter a description, price and quantity of diapers in a pack to determine your cost per diaper.</h5>
+          <h5>
+            Please enter a description, price and quantity of diapers in a pack
+            to determine your cost per diaper.
+          </h5>
         </div>
       </div>
       <div class="row">
         <form action="" class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <input placeholder="description" id="description" type="text" class="validate">
-              <label for="first_name">Description</label>
-              <span class="helper-text" data-error="wrong" data-success="right"></span>
+              <input
+                placeholder="description"
+                id="description"
+                type="text"
+                class="validate"
+              />
+              <label for="description">Description</label>
+              <span
+                class="helper-text"
+                data-error="wrong"
+                data-success="right"
+              ></span>
             </div>
             <div class="input-field col s6">
-              <input placeholder="price" id="description" type="text" class="validate">
+              <input
+                placeholder="price"
+                id="price"
+                type="text"
+                class="validate"
+              />
               <label for="first_name">Diaper Price</label>
-              <span class="helper-text" data-error="wrong" data-success="right"></span>
+              <span
+                class="helper-text"
+                data-error="wrong"
+                data-success="right"
+              ></span>
             </div>
             <div class="input-field col s6">
-              <input placeholder="quantity" id="description" type="text" class="validate">
+              <input
+                placeholder="quantity"
+                id="quantity"
+                type="text"
+                class="validate"
+              />
               <label for="first_name">Diaper Quantity</label>
-              <span class="helper-text" data-error="wrong" data-success="right"></span>
+              <span
+                class="helper-text"
+                data-error="wrong"
+                data-success="right"
+              ></span>
             </div>
           </div>
-          <a class="btn-large disabled">Button</a>
+          <a class="btn-large" id="btn">Button</a>
         </form>
       </div>
       <div class="row">
         <div class="col s9">
           <h3>Results:</h3>
           <div class="results">
-            <ul class="result-list"></ul>
+            <ul id="result-list"></ul>
           </div>
         </div>
       </div>
     </div>
-
+    <!--Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../typescript/index.ts"></script>
     <script src="../typescript/app.ts"></script>
