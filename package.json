@@ -9,7 +9,8 @@
     "build": "parcel build ./src/html/index.html",
     "lint": "eslint --fix ./src/typescript/* && echo 'Lint Completed...'",
     "watch": "watch 'clear && npm run -s test | tap-nirvana && npm run -s lint' src",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist/*",
+    "public-url": "parcel build ./src/html/index.html --public-url khttps://magnumthetyrant1.github.io/diaper-price-calculator/"
   },
   "keywords": [],
   "author": "Max-Andre Zils <zilsmc@gmail.com>",
