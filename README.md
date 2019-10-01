@@ -1,4 +1,4 @@
-# template
+# Diaper Price Calculator
 ---
 
 ## description
@@ -19,3 +19,6 @@ run the project by using:
 ```bash
 $ npm start
 ```
+
+## deploy 
+refer to the package.json file to run the deploy command
