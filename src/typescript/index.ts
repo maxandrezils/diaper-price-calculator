@@ -7,16 +7,19 @@ const performValidation = () => {
   if (description == '') {
     document.getElementById('description-helper-text').innerHTML =
       'Please enter a description';
+    document.getElementById('description-helper-text').classList.add('error');
     noErrorsReturned = 1;
   }
   if (price == '' || isNaN(price)) {
     document.getElementById('price-helper-text').innerHTML =
       'Please enter a valid price';
+    document.getElementById('description-helper-text').classList.add('error');
     noErrorsReturned = 1;
   }
   if (quantity == '' || isNaN(quantity)) {
     document.getElementById('quantity-helper-text').innerHTML =
       'Please enter a valid quantity';
+    document.getElementById('description-helper-text').classList.add('error');
     noErrorsReturned = 1;
   }
   return noErrorsReturned;
@@ -34,7 +37,10 @@ const pricePerDiaper = () => {
 document.getElementById('btn').addEventListener('click', () => {
   const validation = performValidation();
   if (validation == 0) {
-    document.getElementById('result-list').innerHTML = pricePerDiaper();
+    const node = document.createElement('LI');
+    const textNode = document.createTextNode(pricePerDiaper());
+    node.appendChild(textNode);
+    document.getElementById('result-list').appendChild(node);
   }
 });
 
