@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "Compare price per diaper",
   "main": "index.js",
+  "git": {
+    "scripts": {
+      "pre-push": "npm run deploy"
+    }
+  },
   "scripts": {
     "dev": "parcel ./src/html/index.html",
     "build": "parcel build ./src/html/index.html",
     "lint": "eslint --fix ./src/typescript/* && echo 'Lint Completed...'",
     "watch": "watch 'clear && npm run -s test | tap-nirvana && npm run -s lint' src",
     "clean": "rm -rf dist/*",
-    "public-url": "parcel build ./src/html/index.html --public-url ./"
+    "public-url": "parcel build ./src/html/index.html --public-url ./",
+    "deploy": "npm run public-url && surge --project ./dist/ --domain diaper-price-calculator.surge.sh"
   },
   "keywords": [],
   "author": "Max-Andre Zils <zilsmc@gmail.com>",
@@ -23,9 +29,11 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "git-scripts": "^0.2.1",
     "parcel-bundler": "^1.12.3",
     "prettier": "^1.18.2",
     "sass": "^1.22.3",
+    "surge": "^0.21.3",
     "typescript": "^3.5.3",
     "watch": "^1.0.2"
   },
