@@ -6,21 +6,18 @@ const performValidation = () => {
   let noErrorsReturned = 0;
   if (description == '') {
     document.getElementById('description-helper-text').innerHTML =
-      'Please enter a description';
-    document.getElementById('description-helper-text').classList.add('error');
+      '<span style="color:red;">Please enter a description</span>';
     noErrorsReturned = 1;
   }
   if (price == '' || isNaN(price)) {
     document.getElementById('price-helper-text').innerHTML =
-      'Please enter a valid price';
-    document.getElementById('description-helper-text').classList.add('error');
-    noErrorsReturned = 1;
+      '<span style="color:red;">Please enter a valid price</span>';
+      noErrorsReturned = 1;
   }
   if (quantity == '' || isNaN(quantity)) {
     document.getElementById('quantity-helper-text').innerHTML =
-      'Please enter a valid quantity';
-    document.getElementById('description-helper-text').classList.add('error');
-    noErrorsReturned = 1;
+      '<span style="color:red;">Please enter a valid quantity</span>';
+        noErrorsReturned = 1;
   }
   return noErrorsReturned;
 };
@@ -30,7 +27,7 @@ const pricePerDiaper = () => {
   const price = document.getElementById('price').value;
   const quantity = document.getElementById('quantity').value;
   return (
-    `The price per diaper for ${description} is R` + price / quantity + '.'
+    `The price per diaper for ${description} is R` + parseFloat(price / quantity).toFixed(2) + '.'
   );
 };
 // Display on screen
@@ -44,4 +41,4 @@ document.getElementById('btn').addEventListener('click', () => {
   }
 });
 
-// make comparison
+// Compare the price of diapers and show the cheapest option.
