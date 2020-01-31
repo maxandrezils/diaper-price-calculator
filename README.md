@@ -20,5 +20,5 @@ run the project by using:
 $ npm start
 ```
 
-## deploy 
+## Deploy 
 refer to the package.json file to run the deploy command
