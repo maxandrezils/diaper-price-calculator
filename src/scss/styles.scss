@@ -1,4 +1,5 @@
+@use "sass:meta";
 @import 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css';
-@import 'variables.scss';
-@import 'main.scss';
-@import 'nav.scss';
+@include meta.load-css('variables.scss');
+@include meta.load-css('main.scss');
+@include meta.load-css('nav.scss');
